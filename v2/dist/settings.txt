@@ -1,0 +1,3 @@
+Database location --> C:\Users\mig_rprod\Desktop\New Tools\Braids-Manager\v2/database.db
+Braids Location --> C:\Users\mig_rprod\Desktop\New Tools\Braids-Manager\v2/Braids
+Labels Location --> C:\Users\mig_rprod\Desktop\New Tools\Braids-Manager\v2/Labels

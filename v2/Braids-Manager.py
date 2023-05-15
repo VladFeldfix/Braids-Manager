@@ -1,6 +1,11 @@
 # GENERAL INFORMATION
+## The purpose of this application is to maintain a database of all the testing cables
+## Follow document ELECTRICAL TESTING PROCEDURE to see usage instructions
 
 # HOW TO USE
+## Download the application
+## Set all the settings according to PART V
+## Run App_Name.exe file
 
 from PersonalAssistant import *
 from PersonalAssistant import FIELD
@@ -67,16 +72,23 @@ class main:
                     mapfile = self.pa.read_csv(root+"/"+file)
                     braids_sizes = {}
                     braids_plugs = {}
+                    used_pins = {}
                     for line in mapfile[1:]:
-                        if len(line) > 1:
+                        if len(line) >= 3:
                             if line[1] != "":
                                 if not line[1] in braids_sizes:
-                                    braids_sizes[line[1]] = 1
+                                    if line[2] != "BODY":
+                                        if not line[2] in used_pins:
+                                            used_pins[line[2]] = 1
+                                            braids_sizes[line[1]] = 1
                                 else:
-                                    braids_sizes[line[1]] += 1
-                            if not line[3] in braids_plugs:
-                                if len(line) >= 6:
-                                    braids_plugs[line[3]] = [line[4], line[5], line[6]]
+                                    if line[2] != "BODY":
+                                        if not line[2] in used_pins:
+                                            used_pins[line[2]] = 1
+                                            braids_sizes[line[1]] += 1
+                        if len(line) >= 6:
+                            if not line[3] in braids_plugs and line[3] != "":
+                                braids_plugs[line[3]] = [line[4], line[5], line[6]]
                     for braid_id, size in braids_sizes.items():
                         if braid_id in braids_plugs:
                             if len(braids_plugs[braid_id]) == 3:
