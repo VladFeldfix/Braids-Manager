@@ -27,14 +27,15 @@ class main:
         for path, dirs, files in os.walk(self.path_main):
             for file in files:
                 if ".csv" in file:
-                    newid = file.split(".")
-                    newid = file[0]
-                    try:
-                        newid = int(newid)
-                        if newid > self.BRAIDS:
-                            self.BRAIDS = newid
-                    except:
-                        pass
+                    if os.path.isfile(self.path_main+"/"+file):
+                        newid = file.split(".")
+                        newid = newid[0]
+                        try:
+                            newid = int(newid)
+                            if newid > self.BRAIDS:
+                                self.BRAIDS = newid
+                        except:
+                            pass
         
         self.BRAIDS += 1
 
@@ -43,7 +44,7 @@ class main:
         self.load_databases()
 
         # get number of mpt side plugs
-        global_points = self.sc.input("Insert number of MPT-SIDE PLUGS [1 Plug = 50 Global points]")
+        global_points = self.sc.input("For PLUG #"+str(self.BRAIDS)+" Insert number of MPT-SIDE PLUGS [1 Plug = 50 Global points]")
 
         # test user input
         try:
@@ -55,7 +56,7 @@ class main:
             return
         
         # get product side number of plugs
-        plugs = self.sc.input("Insert number of PRODUCT-SIDE PLUGS")
+        plugs = self.sc.input("For PLUG #"+str(self.BRAIDS)+" Insert number of PRODUCT-SIDE PLUGS")
 
         # test user input
         try:
