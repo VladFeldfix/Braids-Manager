@@ -11,9 +11,21 @@ class main:
 
         # get settings
         self.path_main = self.sc.get_setting("Braids Folder")
+        self.lbl_path = self.sc.get_setting("Labels Folder")
 
         # test all paths
         self.sc.test_path(self.path_main)
+        self.sc.test_path(self.lbl_path)
+        self.Labels = []
+        self.Labels.append(self.lbl_path+"/LBL MPT AR00179 Braid number on plastic bag.btw")
+        self.Labels.append(self.lbl_path+"/LBL MPT AR00179 Braid number on MPT side.btw")
+        self.Labels.append(self.lbl_path+"/LBL MPT AR00179 Braid number on MPT side ABC.btw")
+        self.Labels.append(self.lbl_path+"/LBL MPT AR00179 Braid number on product side.btw")
+        self.Labels.append(self.lbl_path+"/LBL MPT AR00233 Hood Marker ABC.btw")
+        self.Labels.append(self.lbl_path+"/LBL MPT AR00233 Hood Marker Numbers.btw")
+
+        for lbl in self.Labels:
+            self.sc.test_path(lbl)
 
         # load databases
         self.load_databases()
@@ -85,6 +97,8 @@ class main:
             file.write(str(i)+",,,"+info[0]+","+info[1]+","+info[2]+","+info[3]+"\n")
         file.close()
         os.popen(self.path_main+"/"+str(self.BRAIDS)+".csv")
+        for lbl in self.Labels:
+            os.popen(lbl)
         
         # restart
         self.sc.restart()
