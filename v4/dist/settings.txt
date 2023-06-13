@@ -1,2 +1,5 @@
-Braids Folder > Y:\Rafael\Cables\Cable Test\Braids
-Labels Folder > Y:\Rafael\Cables\Cable Marking\LABELS\MPT
+/Braids Folder > Y:\Rafael\Cables\Cable Test\Braids
+/Labels Folder > Y:\Rafael\Cables\Cable Marking\LABELS\MPT
+
+Braids Folder > D:\Users\Vlad\Desktop\New Tools Testing\Cable Test\Braids
+Labels Folder > D:\Users\Vlad\Desktop\New Tools Testing\Cable Test\Labels
