@@ -7,7 +7,7 @@ class main:
         self.sc = SmartConsole("Braids Manager", "4.0")
 
         # set-up main memu
-        self.sc.main_menu["ADD NEW BRAID"] = self.new
+        self.sc.add_main_menu_item("ADD NEW BRAID", self.new)
 
         # get settings
         self.path_main = self.sc.get_setting("Braids Folder")
@@ -83,7 +83,7 @@ class main:
         for i in range(1, plugs+1):
             part_number = self.sc.input("For PLUG #"+str(self.BRAIDS)+"."+str(i)+" Insert product-side-plug PART NUMBER").upper() or "None"
             rafael_part_number = self.sc.input("For PLUG #"+str(self.BRAIDS)+"."+str(i)+" Insert product-side-plug RAFAEL PART NUMBER").upper() or "None"
-            pin_type = self.sc.choose("For PLUG #"+str(self.BRAIDS)+"."+str(i)+" Choose Insert product-side-plug PIN TYPE", ["PIN", "SOCKET", "BOTH"])
+            pin_type = self.sc.choose("For PLUG #"+str(self.BRAIDS)+"."+str(i)+" Choose Insert product-side-plug PIN TYPE", ["Pin", "Socket", "Both", "NA"])
             plugs_info[i] = [str(i), part_number, rafael_part_number, pin_type]
         
         # make a map
