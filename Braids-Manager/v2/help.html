@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Braids Manager v2.0</title>
+<link rel="icon" type="image/png" href="favicon.ico"></link>
+<style>
+html{font-family:Arial; background-color:#40454d;}
+p{display:inline-block; line-height: 2;}
+#container{background-color:#f2f4f7; margin: 50 50 50 50; padding:50 50 50 50;}
+</style>
+</head>
+<body>
+<div id='container'>
+<h1>Braids Manager v2.0</h1>
+<h4>Application Guide</h4>
+<hr><h2>PART I: GENERAL INFORMATION</h2><p>
+1. The purpose of this application is to maintain a database of all the testing cables<br>
+2. Follow document ELECTRICAL TESTING PROCEDURE to see usage instructions<br>
+</p><hr><h2>PART II: HOW TO USE</h2><p>
+1. Download the application<br>
+2. Set all the settings according to PART V<br>
+3. Run App_Name.exe file<br>
+</p><hr><h2>PART III: MAIN MENU</h2><p>
+<b>1. ADD NEW TEST CABLE</b><br>
+<b>2. ADD</b><br>
+&emsp;2.1. This will allow you to add a new test cables to the database by filling a form<br>
+&emsp;2.2. At the end of the form press Y to submit the form and the new test cables will be added to the database<br>
+<b>3. EDIT</b><br>
+&emsp;3.1. This will allow you to edit an existing test cable by filling a form<br>
+&emsp;3.2. At the end of the form press Y to submit the form and the test cable information will be edited<br>
+<b>4. DELETE</b><br>
+&emsp;4.1. This will allow you to delete an existing barid only if it is the last one<br>
+</p><hr><h2>PART IV: SCRIPT</h2><p>
+<p>-N/A-</p>
+</p><hr><h2>PART V: SETTINGS</h2><p>
+<b>1. Database location</b> > The location of the user database. For example: database.db<br>
+</p><hr><h2>PART VI: RELATED FILES</h2><p>
+<b>1. settings.txt</b><br>
+<b>2. help.html</b><br>
+<b>3. favicon.ico</b>
+</p><hr><h2>PART VII: ERRORS</h2><p>
+<b>ERROR #000-099</b> >System errors. Fix Application.py file<br>
+<br>
+<b>ERROR #100</b> > Invalid input: Main Menu got invalid input<br>
+<b>ERROR #101</b> > Invalid input: Form got invalid input [Non-Numerical value]<br>
+<b>ERROR #102</b> > Invalid input: Form got invalid input [Invalid date format]<br>
+<b>ERROR #103</b> > Invalid input: Form got invalid input [Invalid year format]<br>
+<b>ERROR #104</b> > Invalid input: Form got invalid input [Invalid month format]<br>
+<b>ERROR #105</b> > Invalid input: Form got invalid input [Invalid day format]<br>
+<br>
+<b>ERROR #200</b> > Missing file: help.pdf<br>
+<b>ERROR #201</b> > Missing file: favicon.ico<br>
+<b>ERROR #202</b> > Missing file: settings.txt<br>
+<b>ERROR #203</b> > Missing file: #Script-Filename<br>
+<b>ERROR #204</b> > Missing file: #CSV-Filename<br>
+<br>
+<b>ERROR #300</b> > Error in file: settings.txt. Missing setting: #Setting Name<br>
+<b>ERROR #301</b> > Error in file: #script. Invalid function in script file<br>
+</div>
+</body>
+</html>

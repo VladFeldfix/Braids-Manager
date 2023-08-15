@@ -1,0 +1,1 @@
+pyinstaller -i favicon.ico --noconsole --onefile Braids-Manager.py
