@@ -1,3 +1,0 @@
-Database location --> C:\Users\mig_rprod\Desktop\New Tools Testing ground/Database.db
-Braids Location --> C:\Users\mig_rprod\Desktop\New Tools Testing ground\Maps
-Labels Location --> C:\Users\mig_rprod\Desktop\New Tools Testing ground\Maps\MapLabels
