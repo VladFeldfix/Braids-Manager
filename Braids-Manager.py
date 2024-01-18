@@ -1,10 +1,11 @@
+# Download SmartConsole.py from: https://github.com/VladFeldfix/Smart-Console/blob/main/SmartConsole.py
 from SmartConsole import *
 
 class main:
     # constructor
     def __init__(self):
         # load smart console
-        self.sc = SmartConsole("Braids Manager", "4.0")
+        self.sc = SmartConsole("Braids Manager", "1.0")
 
         # set-up main memu
         self.sc.add_main_menu_item("ADD NEW BRAID", self.new)
