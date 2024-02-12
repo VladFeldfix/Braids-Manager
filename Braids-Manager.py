@@ -40,8 +40,9 @@ class main:
         for path, dirs, files in os.walk(self.path_main):
             for file in files:
                 if ".csv" in file:
+                    number = file[3:]
                     if os.path.isfile(self.path_main+"/"+file):
-                        newid = file.split(".")
+                        newid = number.split(".")
                         newid = newid[0]
                         try:
                             newid = int(newid)
@@ -88,7 +89,7 @@ class main:
             plugs_info[i] = [str(i), part_number, rafael_part_number, pin_type]
         
         # make a map
-        file = open(self.path_main+"/"+str(self.BRAIDS)+".csv", 'w')
+        file = open(self.path_main+"/R1_"+str(self.BRAIDS)+".csv", 'w')
         file.write("GLOBAL POINT,PLUG,PIN,PLUG NUMBER,PART NUMBER,RAFAEL PART NUMBER,PIN TYPE\n")
         for i in range(1,global_points+1):
             if i in plugs_info:
@@ -97,7 +98,7 @@ class main:
                 info = ["","","",""]
             file.write(str(i)+",,,"+info[0]+","+info[1]+","+info[2]+","+info[3]+"\n")
         file.close()
-        os.popen(self.path_main+"/"+str(self.BRAIDS)+".csv")
+        os.popen(self.path_main+"/R1_"+str(self.BRAIDS)+".csv")
         for lbl in self.Labels:
             os.popen(lbl)
         
