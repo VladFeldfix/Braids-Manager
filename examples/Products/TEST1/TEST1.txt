@@ -1,0 +1,64 @@
+/************************************
+    PCBA Part Number: TEST
+    Written by: Vlad Feldfix & Vladimir Shishkovsky from: FLEX For RAFAEL R&D
+    Machine Type: MPT5000
+    Machine Software Version: 4.4.6.60
+    Date Created: 2024-02-21
+    SW part Number: TEST
+    According to TRD No.: PS-39-756948 rev.: L
+************************************/
+
+//GET HTML
+LoadHTML("TEST.html");
+
+//INFO
+SetPrintLog(ON=ALL,CON);
+PrintLn(CON+DSK,": GENERAL INFO");
+PrintLn(CON+DSK," /*****  Flex  *****/");
+Print  (4," Date: "); Print(4,date); Print(4,"  "); Print(4,time);
+PrintLn(CON+DSK,"");
+PrintLn(CON+DSK," Customer: RAFAEL");
+PrintLn(CON+DSK," Ass-y name: Description");
+PrintLn(CON+DSK," Ass-y PN: TEST");
+PrintLn(CON+DSK," Print PN: TEST");
+PrintLn(CON+DSK," Prog name: TEST");
+PrintLn(CON+DSK," Wire Diagram: Drawing Rev.: Drawing_Rev");
+PrintLn(CON+DSK," TRD: PS-39-756948 Rev.: L");
+
+//GET OPERATOR NAME AND SERIAL NUMBER
+PrintLn(CON+DSK,"");
+PrintLn(CON+DSK,": OPERATOR NAME AND PRODUCT SERIAL NUMBER");
+Print(CON+DSK," Operator Name: ");
+Input("Enter Operator Name: ");
+PrintLn(CON+DSK, TEXT);
+Print(CON+DSK," Serial Number: ");
+Input("Enter Serial Number: ");
+PrintLn(CON+DSK, TEXT);
+PrintLn(CON+DSK,"");
+
+//LOAD CALIBRATION FILE
+AdapterCal("C:/MPT/Systems.cal");
+
+//TEST CONDUCTOR - 2 wire
+PrintLn(CON+DSK,"TEST CONDUCTOR - 2 wire");
+SetConductor(HC, Pass < 1 Ohm, I = 1000 mA, V = 5 Volts);
+Continuity(all);
+
+//TEST INSULATION
+PrintLn(CON+DSK,"TEST INSULATION");
+SetInsulation(LV, Pass > 100 KOhms, I = Auto);
+Insulation(all);
+
+//TEST HiPot DC
+If(PASSED){
+    Prompt("WARNING! Hi voltage test is about to start. Close the glass dome before continuation");
+    PrintLn(CON+DSK,"TEST HiPot DC");
+    SetHiPot(DC, V = 500 Volts, R >100 MOhm,Dwell = 1S, RampUpRate=1000);
+    HiPotDC(ALL);
+}
+
+//TEST RESULT
+PrintLn(CON+DSK,"");
+PrintLn(CON+DSK,": TEST RESULT");
+
+//Created with MPT-Manager 2.0 on 2024-02-21

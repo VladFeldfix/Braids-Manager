@@ -1,0 +1,13 @@
+-- Test DCDC converter
+SetHigh(P24V)
+SetLow(P24V_RTN)
+SetPPSOn('msr', {i = 0.02, v = 3})
+Sleep(300)
+SetPPSOn('msr', {i = 0.02, v = 24})
+Sleep(300)
+ClearAllPoints()
+SetHigh(P5V)
+SetLow(P5V_RTN)
+ReadV ("Test DC-DC converter CONVERTERNAME", 'msr', { }, {v_min = 4.9V, v_max = 5.1V})
+ClearAllPoints()
+SetPPSOff('msr')

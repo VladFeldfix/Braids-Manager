@@ -1,0 +1,70 @@
+{
+	name = [[
+		TEST1
+	]],
+
+	mapping_table = [[
+		P1 = {braid1, 1, braid1_1}
+		P2 = {braid2, 1, braid2_2}
+		P3 = {braid1, 1, braid1_3}
+	]],
+
+	net_list = [[
+		NET1 = {P1.1, P2.A, P3.k1}
+		NET2 = {P1.2, P2.B, P3.k2}
+		NET3_EMPTY_NET = {P3.1}
+	]],
+
+	scripts = {
+		test_program = [[
+
+-- Get Operator Name and Serial Number
+if GetPersist('OperatorName') then OperatorName = GetPersist('OperatorName') else OperatorName = 'OperatorName' end 
+if GetPersist('SerialNumber') then SerialNumber = GetPersist('SerialNumber') else SerialNumber = 'SerialNumber' end
+OperatorName = InputText('Enter Operator Name',OperatorName, 'Operator Name', '')
+SetPersist('OperatorName',OperatorName)
+SerialNumber = InputText('Enter Serial Number',SerialNumber, 'Serial Number', '')
+SetPersist('SerialNumber',SerialNumber)
+
+-- Generate report header
+Report.Header('Machine Name',"MPT-5000")
+Report.Header('Test TRD',"PS-39-756948 Rev.: L")
+Report.Header('Product Part Number',tostring(TEST))
+Report.Header('Product Description',tostring(Description))
+Report.Header('Wiring Diagram',tostring(Drawing)..'Rev.: '..tostring(Drawing_Rev))
+Report.Header('Written by',"Vlad Feldfix, Vladimir Shishkovsky")
+Report.Header('Operator Name',tostring(OperatorName))
+Report.Header('Serial Number',tostring(SerialNumber))
+
+-- Continuity Test 
+ContinuitySetup = {
+  setup = {i = 0.1, v = 5, Kelvin = 0, tare = {mode = 'fixed', data = {res = 2.5}}},
+  criteria = {r_max = 1},
+}
+Continuity('Continuity Test', 'msr', ContinuitySetup)
+
+-- Isolation Test
+IsolationSetup = {
+  setup = {i = 0.1, v = 5, kelvin = 0, tare = {mode = 'fixed', data = {res = 2.5}}},
+  criteria = {r_min = 100},
+  diagnose = {scan = 'binary'},
+}
+Isolation('Test Isolation', 'msr', IsolationSetup, 'all')
+
+-- HiPot Test
+HiPotSetup = {
+    setup = {v = 500, kelvin = 0, Dwell = 1, tare = {mode = 'fixed', data = {res = 2.5}}},
+    criteria = {r_min = 1000},
+    diagnose = {scan = 'binary'}
+}
+IR('Test HiPot', 'hvdc', HiPotSetup, HiPotParameters.Points)
+  
+
+-- Test Result
+Report.Info("Test Result:")
+
+-- Created with MPT-Manager 2.0 on 2024-02-22
+
+		]]
+	}
+}

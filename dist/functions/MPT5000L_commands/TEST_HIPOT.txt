@@ -1,0 +1,7 @@
+//TEST HiPot DC
+If(PASSED){
+    Prompt("WARNING! Hi voltage test is about to start. Close the glass dome before continuation");
+    PrintLn(CON+DSK,"TEST HiPot DC");
+    SetHiPot(DC, V = 500 Volts, R >100 MOhm,Dwell = 1S, RampUpRate=1000);
+    HiPotDC(ALL);
+}

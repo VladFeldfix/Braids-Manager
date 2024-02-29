@@ -1,0 +1,10 @@
+//DISCHARGE CAPACITOR
+ClrAllTestCom();
+SetCom(POINT1, POINT2);
+Delay(500);
+ClrAllTestCom();
+
+//TEST CAPACITOR
+PrintLn(CON+DSK,"TEST CAPACITOR CAPNAME");
+SetCAP(Pass = MIN pF, MAX pF);
+Cap(POINT1, POINT2);

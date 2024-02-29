@@ -1,0 +1,5 @@
+//TEST SWITCH
+PrintLn(CON+DSK,"TEST SWITCH SWNAME");
+PrintLn(CON+DSK, "Set switch SWNAME to position POSITION");
+WaitForCont((POINT1, POINT2));
+Continuity((POINT1, POINT2));

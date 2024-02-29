@@ -1,0 +1,5 @@
+//TEST RESULT
+PrintLn(CON+DSK,"");
+PrintLn(CON+DSK,": TEST RESULT");
+
+//Created with MPT-Manager SOFTWARE_REV on TODAY

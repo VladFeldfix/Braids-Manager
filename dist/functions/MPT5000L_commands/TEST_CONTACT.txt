@@ -1,0 +1,4 @@
+//TEST CONDUCTOR - 2 wire
+PrintLn(CON+DSK,"TEST CONDUCTOR - 2 wire");
+SetConductor(HC, Pass < 1 Ohm, I = 1000 mA, V = 5 Volts);
+Continuity(all);
