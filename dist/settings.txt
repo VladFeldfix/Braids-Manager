@@ -1,2 +1,2 @@
-Programs location > Y:\Rafael\Cables\Cable Test\Programs
-Maps location > Y:\Rafael\Cables\Cable Test\Braids
+Braids Folder > Y:\Rafael\Cables\Cable Test\Braids
+Labels Folder > Y:\Rafael\Cables\Cable Marking\LABELS\MPT
