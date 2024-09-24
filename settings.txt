@@ -1,2 +1,2 @@
-Braids Folder > Y:/Rafael/Cables/Cable Test/Braids
-Labels Folder > Y:/Rafael/Cables/Cable Marking/בדיקה חשמלית
+Braids Folder > C:\Users\me\Braids
+Labels Folder > C:\Users\me\בדיקה חשמלית
