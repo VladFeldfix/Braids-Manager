@@ -1,5 +1,0 @@
-START(TEST2, Description , Drawing , Drawing_Rev )
-TEST_CONTACT()
-TEST_INSULATION()
-TEST_HIPOT()
-END()
