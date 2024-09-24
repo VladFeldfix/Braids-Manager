@@ -1,4 +1,0 @@
-//TEST INSULATION
-PrintLn(CON+DSK,"TEST INSULATION");
-SetInsulation(LV, Pass > 100 KOhms, I = Auto);
-Insulation(all);

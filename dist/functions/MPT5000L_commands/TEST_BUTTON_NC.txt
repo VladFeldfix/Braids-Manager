@@ -1,7 +1,0 @@
-//TEST BUTTON NC
-PrintLn(CON+DSK,"TEST NORMALLY CLOSED BUTTON BTNNAME");
-PrintLn(CON+DSK, "Press button BTNNAME");
-WaitForNoCont((POINT1, POINT2));
-PrintLn(CON+DSK, "Release button BTNNAME");
-WaitForCont((POINT1, POINT2));
-Continuity((POINT1, POINT2));

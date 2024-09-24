@@ -1,7 +1,0 @@
-//TEST SWITCH ON-OFF
-PrintLn(CON+DSK,"TEST SWITCH ON-OFF SWNAME");
-PrintLn(CON+DSK, "Set switch SWNAME to position ON");
-WaitForCont((POINT1, POINT2));
-Continuity((POINT1, POINT2));
-PrintLn(CON+DSK, "Set switch SWNAME to position OFF");
-WaitForNoCont((POINT1, POINT2));
