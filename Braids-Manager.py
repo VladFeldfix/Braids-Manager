@@ -5,7 +5,7 @@ class main:
     # constructor
     def __init__(self):
         # load smart console
-        self.sc = SmartConsole("Braids Manager", "1.0")
+        self.sc = SmartConsole("Braids Manager", "2.0")
 
         # set-up main memu
         self.sc.add_main_menu_item("ADD NEW BRAID", self.new)
